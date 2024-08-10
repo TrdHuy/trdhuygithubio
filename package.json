@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "webpack --mode production",
-    "start": "webpack --mode development",
-    "rebuild": "npm run clean && npm run build",
+    "buildRelease": "webpack --mode production",
+    "buildDebug": "webpack --mode development",
+    "rebuild": "npm run clean && npm run buildRelease",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
