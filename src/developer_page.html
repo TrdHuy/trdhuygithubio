@@ -1,0 +1,41 @@
+<head>
+     <link rel="stylesheet" href="./assets/css/index.css">
+     <link rel="stylesheet" href="./assets/css/developer_page.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="developer-container">
+
+     <table class="developer-file-table" id="fileTable" style="display: none;">
+          <thead>
+               <tr>
+                    <th>File Path</th>
+                    <th>Project id</th>
+                    <th>Report creation time</th>
+                    <th>properties.json</th>
+               </tr>
+          </thead>
+          <tbody id="fileTableBody">
+               <tr id="fileTableSpaceRow" class="spacer-row">
+                    <td colspan="4"></td>
+               </tr>
+          </tbody>
+     </table>
+
+     <button class="form-btn developer-report-btn" type="submit" load-developer-report-btn>
+          <ion-icon name="cloud-download"></ion-icon>
+          <span>Load developer reports</span>
+     </button>
+
+</body>
+
+<footer>
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="./assets/js/contract.js"></script>
+     <script src="./assets/js/common.iframeSizeChangeCallback.js"></script>
+     
+</footer>

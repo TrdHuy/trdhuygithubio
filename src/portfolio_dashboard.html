@@ -1,0 +1,107 @@
+<head>
+     <link rel="stylesheet" href="./assets/css/base.css">
+     <link rel="stylesheet" href="./assets/css/index.css">
+     <link rel="stylesheet" href="./assets/css/portfolio_dashboard.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body style="background: var(--eerie-black-2);">
+
+     <div id="portfolio-overview-area" class="portfolio-overview-area active">
+          <ul class="filter-list">
+
+               <li class="filter-item">
+                    <button class="active" data-filter-btn>All</button>
+               </li>
+
+               <li class="filter-item">
+                    <button data-filter-btn>Web design</button>
+               </li>
+
+               <li class="filter-item">
+                    <button data-filter-btn>Applications</button>
+               </li>
+
+               <li class="filter-item">
+                    <button data-filter-btn>Web development</button>
+               </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+               <button class="filter-select" data-select>
+
+                    <div class="select-value" data-selecct-value>Select category</div>
+
+                    <div class="select-icon">
+                         <ion-icon name="chevron-down"></ion-icon>
+                    </div>
+
+               </button>
+
+               <ul class="select-list">
+
+                    <li class="select-item">
+                         <button data-select-item>All</button>
+                    </li>
+
+                    <li class="select-item">
+                         <button data-select-item>Web design</button>
+                    </li>
+
+                    <li class="select-item">
+                         <button data-select-item>Applications</button>
+                    </li>
+
+                    <li class="select-item">
+                         <button data-select-item>Web development</button>
+                    </li>
+
+               </ul>
+
+          </div>
+
+          <ul id="portfolio-list" class="project-list">
+               <li id="portfolio-list-item" class="project-item" data-filter-item data-category="web development">
+                    <figure class="project-img">
+                         <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                         </div>
+                         <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy" portfolio-list-item-img>
+                    </figure>
+
+                    <h3 class="project-title" portfolio-list-item-title>Finance</h3>
+
+                    <p class="project-category" portfolio-list-item-category>Web development</p>
+               </li>
+          </ul>
+     </div>
+
+
+     <div id="portfolio-page-detai" class="portfolio-page-detai">
+          <div class="flex-horizontal-layout" style="align-items: center;">
+               <button id="portfolio-close-btn" class="icon-btn">
+                    <ion-icon name="chevron-back"></ion-icon>
+               </button>
+               <div>
+                    <h3 id="portfolio-page-title" class="h3">Portfolio</h3>
+                    <!-- <p class="underline-for-text"></p> -->
+               </div>
+          </div>
+
+          <iframe id="portfolio-page-iframe-container" allowTransparency="true" scrolling="no" frameborder="0"
+               allowfullscreen="true" style="width: 100%; height: auto; margin-top: 30px;"></iframe>
+     </div>
+</body>
+
+<footer>
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="./assets/js/contract.js"></script>
+     <script src="./assets/js/common.iframeSizeChangeCallback.js"></script>
+     <script src="./assets/js/portfolio_dashboard.js"></script>
+
+</footer>

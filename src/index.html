@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H U Y</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <script src="./assets/js/contract.js"></script>
+  <script defer="defer" src="./assets/js/index.js"></script>
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <div class="modal-container" form-input-container>
+      <div class="overlay" form-input-overlay></div>
+      <section class="form-input-modal">
+        <button class="modal-close-btn" form-input-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <div class="modal-content" form-input-modal-content>
+
+        </div>
+        <iframe id="formInputFrame" allowTransparency="true" scrolling="no" frameborder="0"></iframe>
+      </section>
+    </div>
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/ava.jpg" alt="H U Y">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="H U Y">H U Y</h1>
+
+          <p class="title">Fullstack Software Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:trdtranduchuy@gmail.com" class="contact-link">trdtranduchuy@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+84383854090" class="contact-link">+84 (38) 3854-090</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="1996-09-10">Oct 9, 1996</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Long Bien, Ha Noi, Viet Nam</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.facebook.com/trdtranduchuy" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/TrdHuy" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </aside>
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Developers</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>👋 Hi. I am Huy. I am a seasoned fullstack engineer with a passion for software development 🧑‍💻. I
+            specialize in server applications, mobile applications, and desktop applications. With years of experience,
+            I've worked on a variety of projects that span across multiple platforms and technologies.</p>
+
+          <p>🚀 I have had the privilege of working at Samsung, where I spent several years researching and developing
+            innovative software solutions. My time at Samsung has honed my skills in creating robust and efficient
+            software systems, and I bring that expertise to every project I work on.</p>
+
+          <p>📈 Throughout my career, I have managed and led the development of multiple software projects, ensuring
+            they are delivered on time and meet high-quality standards. As a software architect, I have designed and
+            implemented scalable and maintainable software architectures that drive business success.</p>
+
+          <p>⚡️ I am obsessed with creating robust and efficient software solutions. I enjoy solving complex problems
+            and building scalable systems that enhance user experiences.</p>
+
+          <p>🎓 Additionally, I serve as an internal lecturer at Samsung, where I teach Android application programming.
+            Through this role, I have the opportunity to share my knowledge and experience with colleagues, helping to
+            cultivate the next generation of skilled developers within the company.</p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/blender.png" alt="design icon" width="40" data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>Application design</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    The most modern and high-quality design made at a professional level.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/net-core.png" alt="Application development icon" width="40"
+                  data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>Desktop Apps</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    Developed highly scalable and efficient server-side applications using .NET framework.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/gh-action.png" alt="Application development icon" width="40"
+                  data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>DevOps</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    Implemented CI/CD pipelines and automated deployment processes using Github Action.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/xamarin.png" alt="mobile app icon" width="40" data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>Mobile apps</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    Our mobile application development service excels in creating high-quality, cross-platform
+                    applications for both iOS and Android using the Xamarin framework.
+                  </p>
+                  <p>
+                    Ensuring seamless performance and
+                    a consistent user experience across all devices.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/android.png" alt="mobile app icon" width="40" data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>Android apps</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    Our professional mobile application development service specializes in creating robust and
+                    innovative applications using the Android framework.
+                  </p>
+                  <p>
+                    Ensuring high performance and seamless user experiences.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/unity.png" alt="unity icon" width="40" data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>Game Development</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    Developed engaging and interactive games using the Unity platform.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="service-item" data-service-item>
+              <div class="service-icon-box">
+                <img src="./assets/images/jira.png" alt="mobile app icon" width="40" data-service-avatar>
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title" data-service-title>Project Management</h4>
+                <div class="service-item-text" data-service-text>
+                  <p>
+                    Managed the development of multiple software projects, ensuring timely delivery and adherence to
+                    quality standards.
+                    Designed and implemented scalable and maintainable software architectures.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">My team</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/hieu-nguyen.jpg" alt="Henry william" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Nguyễn Trung Hiếu</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    He is a talented programmer with 2 years of experience in web and desktop application development.
+                    Skilled in both front-end and back-end technologies, he has successfully created dynamic websites
+                    and efficient desktop applications.
+                  </p>
+                  <p>
+                    His dedication to writing clean, maintainable code ensures that
+                    his projects are both user-friendly and reliable. Always eager to learn, he continually updates his
+                    knowledge to stay current with the latest industry trends and technologies.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/mai-tam.jpg" alt="Mai Tam" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mai Tâm</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    She is a professional tester with 4 years of experience in the field of global application testing.
+                    With extensive knowledge and exceptional skills, she is proficient in running testing tools and
+                    designing them effectively.
+                  </p>
+                  <p>
+                    She has written numerous high-quality test cases, ensuring comprehensive
+                    testing of applications that meet the highest standards. Her passion and progressive mindset
+                    contribute positively to the success of every testing project she is involved in.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/duy-nguyen.jpg" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Nguyễn Quốc Duy</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    He is a skilled programmer with 4 years of experience in developing mobile applications and web
+                    solutions. With a deep understanding of both front-end and back-end technologies, he has
+                    successfully
+                    built and deployed numerous high-quality apps and websites.
+                  </p>
+                  <p>
+                    His expertise in creating user-friendly interfaces and robust back-end systems ensures that every
+                    project he works on is both functional and efficient. Passionate about staying updated with the
+                    latest
+                    industry trends, he continually enhances his skills to deliver innovative and reliable solutions.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Nguyễn Quốc Duy</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  He is a skilled programmer with 4 years of experience in developing mobile applications and web
+                  solutions. With a deep understanding of both front-end and back-end technologies, he has successfully
+                  built and deployed numerous high-quality apps and websites.
+                </p>
+                <p>
+                  His expertise in creating user-friendly interfaces and robust back-end systems ensures that every
+                  project he works on is both functional and efficient. Passionate about staying updated with the latest
+                  industry trends, he continually enhances his skills to deliver innovative and reliable solutions.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <!--
+          - service modal
+        -->
+
+        <div class="modal-container" data-service-modal-container>
+
+          <div class="overlay" data-service-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-service-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure>
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-service-modal-img>
+              </figure>
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-service-modal-title>Nguyễn Quốc Duy</h4>
+
+              <div data-service-modal-text>
+                <p>
+                  He is a skilled programmer with 4 years of experience in developing mobile applications and web
+                  solutions. With a deep understanding of both front-end and back-end technologies, he has successfully
+                  built and deployed numerous high-quality apps and websites.
+                </p>
+                <p>
+                  His expertise in creating user-friendly interfaces and robust back-end systems ensures that every
+                  project he works on is both functional and efficient. Passionate about staying updated with the latest
+                  industry trends, he continually enhances his skills to deliver innovative and reliable solutions.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+        <!--
+          - clients
+        -->
+
+        <!-- <section class="clients">
+
+          <h3 class="h3 clients-title">Clients</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section> -->
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Posts and Telecommunications Institute of Technology</h4>
+
+              <span>2014 — 2018</span>
+
+              <p class="timeline-text">
+                During my time at the academy, I developed a strong foundation in telecommunications and information
+                technology. I was actively involved in various projects and research activities, gaining hands-on
+                experience in software development and network engineering. I also participated in several competitions
+                and workshops, enhancing my problem-solving skills and technical knowledge.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">External Coding Courses</h4>
+
+              <span>2013 — 2015</span>
+
+              <p class="timeline-text">
+                During this period, I enrolled in several coding courses at various training centers. These courses
+                covered a range of topics including web development, data structures, algorithms, and mobile app
+                development. The hands-on experience and practical knowledge gained from these courses significantly
+                complemented my academic studies and fueled my passion for programming.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Luong The Vinh High School for Gifted Students in Mathematics and
+                Informatics</h4>
+
+              <span>2011 — 2013</span>
+
+              <p class="timeline-text">
+                In this specialized program, I focused on advanced mathematics and computer science. This rigorous
+                curriculum helped me develop critical thinking and analytical skills. I was a member of the school's
+                math club and competed in several national math and coding competitions, where I consistently achieved
+                top rankings. This period laid the groundwork for my passion for technology and software development.
+              </p>
+
+            </li>
+
+
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Senior Mobile Application Software Development Engineer at Samsung</h4>
+
+              <span>2022 — Present</span>
+
+              <p class="timeline-text">
+                In my current role at Samsung, I am a software development engineer specializing in mobile applications
+                for the Android platform. My primary focus is on designing and developing security solutions for
+                Samsung's mobile devices. I collaborate closely with cross-functional teams to ensure the security
+                features are robust, user-friendly, and aligned with the latest industry standards. My responsibilities
+                include coding, testing, and implementing innovative security measures to protect user data and enhance
+                the overall security of Samsung's mobile ecosystem.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Team Leader and Founder of Dezone99</h4>
+
+              <span>2021 — Present</span>
+
+              <p class="timeline-text">
+                Since 2021, I have founded and led Dezone99, an external development team specializing in full-stack
+                software development for desktop, mobile, and web applications. In this role, I oversee the development
+                process, ensuring that projects meet high standards of quality and functionality. My team excels in UI
+                design, creating intuitive and visually appealing interfaces for our software solutions. As the team
+                leader, I am responsible for project management, client communication, and driving the overall success
+                of our development initiatives.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">User Interface Software Engineer at Samsung</h4>
+
+              <span>2020 — 2022</span>
+
+              <p class="timeline-text">
+                From 2020 to 2022, I worked on developing software and solutions related to user interfaces for mobile
+                devices at Samsung. My projects included enhancing the user experience for features such as the
+                keyboard, DeX mode, and S Pen functionality. I focused on creating intuitive and responsive interfaces,
+                ensuring seamless interaction between the user and the device. My role involved close collaboration with
+                design and development teams to implement user-centric features that meet high standards of usability
+                and performance.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Software Project Manager at Samsung</h4>
+
+              <span>2018 — 2020</span>
+
+              <p class="timeline-text">
+                From 2018 to 2020, I was involved in managing software projects at Samsung. My responsibilities included
+                building binaries for mobile devices, ensuring that devices were set up correctly according to the
+                requirements of customers in different regions globally. I also reviewed commits and collaborated with
+                various teams to maintain the quality and consistency of the software. My role required meticulous
+                attention to detail and a strong understanding of project management principles to ensure timely and
+                accurate delivery of software solutions.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Desktop apps development</h5>
+                <data value="80">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Android apps development</h5>
+                <data value="70">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Mobile apps development</h5>
+                <data value="90">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web development</h5>
+                <data value="50">50%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Game development</h5>
+                <data value="50">60%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Project Management</h5>
+                <data value="50">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Application Design</h5>
+                <data value="50">60%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 60%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Branding</h5>
+                <data value="50">40%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 40%;"></div>
+              </div>
+
+            </li>
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio" data-src="portfolio_dashboard.html?iframeId=portfolioDashboard">
+
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+          <iframe class="blog-frame-container" id="portfolioDashboard" allowTransparency="true" scrolling="no"
+            loading="lazy" frameborder="0" allowfullscreen="true"></iframe>
+
+          <!-- <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Finance</h3>
+
+                <p class="project-category">Web development</p>
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+          </ul> -->
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="developers" data-src="developer_page.html?iframeId=developerPageFrame">
+
+        <header>
+          <h2 class="h2 article-title">Developers</h2>
+        </header>
+
+        <section class="blog-posts">
+          <iframe class="blog-frame-container" id="developerPageFrame" allowTransparency="true" scrolling="no"
+            frameborder="0" allowfullscreen="true"></iframe>
+        </section>
+      </article>
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59582.225634042436!2d105.81218971544796!3d21.037122854436067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a96e2e72c51f%3A0x54689ea60eeeee78!2sLong%20Bi%C3%AAn%2C%20Hanoi%2C%20Vietnam!5e0!3m2!1sen!2sbd!4v1722782819327!5m2!1sen!2sbd"
+              width="400" height="300" loading="lazy" id="googleMapFrame"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

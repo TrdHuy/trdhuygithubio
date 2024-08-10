@@ -1,0 +1,11 @@
+.flex-horizontal-layout {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;
+     gap: 10px;
+ }
+ 
+ .flex-horizontal-item {
+     flex: 1;
+ }

@@ -1,0 +1,16 @@
+[
+     {
+          "page_id": "page_portfolio_autoblocker",
+          "page_name": "Auto blocker",
+          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
+          "page_url": "portfolio_autoblocker.html",
+          "page_category": "Android application"
+     },
+     {
+          "page_id": "page_portfolio_autoblocker2",
+          "page_name": "Auto blocker",
+          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
+          "page_url": "portfolio_autoblocker.html",
+          "page_category": "Android application"
+     }
+]

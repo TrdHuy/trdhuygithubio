@@ -1,0 +1,43 @@
+{
+     "version": "2.0.0",
+     "tasks": [
+          {
+               "label": "Clean",
+               "type": "shell",
+               "command": "powershell",
+               "args": [
+                    "-Command",
+                    "Remove-Item -Recurse -Force bin;",
+                    "Remove-Item -Recurse -Force dist;"
+               ],
+               "problemMatcher": [],
+               "detail": "Xóa thư mục bin và dist để làm sạch trước khi build lại"
+          },
+          {
+               "label": "Build Project with Webpack (Development)",
+               "type": "shell",
+               "command": "powershell",
+               "args": [
+                    "-Command",
+                    "New-Item -ItemType Directory -Force -Path bin;",
+                    "npx webpack --config webpack.config.js --mode development;"
+               ],
+               "group": "build",
+               "problemMatcher": [],
+               "detail": "Build project với Webpack ở chế độ development"
+          },
+          {
+               "label": "Build Project with Webpack (Production)",
+               "type": "shell",
+               "command": "powershell",
+               "args": [
+                    "-Command",
+                    "New-Item -ItemType Directory -Force -Path bin;",
+                    "npx webpack --config webpack.config.js --mode production;"
+               ],
+               "group": "build",
+               "problemMatcher": [],
+               "detail": "Build project với Webpack ở chế độ production"
+          },
+     ]
+}

@@ -1,0 +1,65 @@
+{
+     "version": "0.2.0",
+     "configurations": [
+          {
+               "name": "Debug Webpack Plugin",
+               "type": "node",
+               "request": "launch",
+               "program": "${workspaceFolder}/node_modules/webpack/bin/webpack.js",
+               "args": [
+                    "--config",
+                    "webpack.config.js",
+                    "--mode",
+                    "production" // development, production
+               ],
+               "sourceMaps": true,
+               "skipFiles": [
+                    "<node_internals>/**"
+               ],
+               "outFiles": [
+                    "${workspaceFolder}/**/*.js"
+               ],
+               "console": "integratedTerminal"
+          },
+          {
+               "name": "Open HTML with Debugging",
+               "type": "chrome",
+               "request": "launch",
+               "file": "${workspaceFolder}/src/index.html", // Đường dẫn đến file HTML
+               "webRoot": "${workspaceFolder}",
+               "sourceMaps": true,
+               "internalConsoleOptions": "openOnSessionStart",
+          },
+          {
+               "name": "Open HTML in Browser without Debugging",
+               "type": "node",
+               "request": "launch",
+               "program": "${workspaceFolder}/src/index.html",
+               "preLaunchTask": "Open HTML in Browser",
+               "internalConsoleOptions": "neverOpen"
+          },
+          {
+               "name": "Option 2: Open HTML with Live Server",
+               "type": "node",
+               "request": "launch",
+               "program": "${workspaceFolder}/src/index.html",
+               "preLaunchTask": "Open HTML with Live Server",
+               "internalConsoleOptions": "neverOpen"
+          },
+          {
+               "name": "Build and Open Dist with Live Server",
+               "type": "chrome",
+               "request": "launch",
+               "url": "http://localhost:5501/dist/index.html",
+               //"preLaunchTask": "Build Project with Webpack (Development)",
+               "webRoot": "${workspaceFolder}/dist",
+               "internalConsoleOptions": "neverOpen"
+          },
+          {
+               "name": "Open current file with Live Server",
+               "type": "chrome",
+               "request": "launch",
+               "url": "http://localhost:5501/${relativeFile}",
+          }
+     ]
+}
