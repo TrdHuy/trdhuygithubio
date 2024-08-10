@@ -1,7 +1,27 @@
 'use strict';
-
 const TRD_CONTRACT = window.TRD_CONTRACT;
-
+window.top.showTopWindowInputForm = function showTopWindowInputForm(url, submitCallback) {
+  this.window.loadFormToIFrame(url, formIframe);
+  formIframe.submitCallback = submitCallback;
+  formIframe.currentUrl = url;
+  toogleFormInput(true);
+}
+window.top.hideTopWindowInputForm = function hideTopWindowInputForm(url) {
+  if (formIframe.currentUrl === url) {
+    toogleFormInput(false);
+  }
+}
+const toogleFormInput = function (isShow) {
+  if (isShow === true) {
+    formInputContainer.classList.add("active");
+    formInputOverlay.classList.add("active");
+  } else {
+    formInputContainer.classList.remove("active");
+    formInputOverlay.classList.remove("active");
+    formIframe.submitCallback = undefined;
+    formIframe.currentUrl = undefined;
+  }
+}
 
 window.addEventListener('load', function () {
   TRD_CONTRACT.clearLocalStorage();
@@ -67,17 +87,6 @@ overlay.addEventListener("click", testimonialsModalFunc);
 window.addEventListener('message', function (event) {
   const data = event.data;
   switch (data.event) {
-    case TRD_CONTRACT.EVENT.SHOW_FORM_INPUT:
-      const url = data.url;
-      if (url) {
-        this.window.loadFormToIFrame(url, formIframe);
-        formInputModalFunc();
-      }
-      break;
-    case TRD_CONTRACT.EVENT.HIDE_FORM_INPUT:
-      formInputContainer.classList.remove("active");
-      formInputOverlay.classList.remove("active");
-      break;
     default:
       console.log('Unknown event:', data.event);
   }
@@ -88,12 +97,9 @@ const formInputCloseBtn = document.querySelector("[form-input-close-btn]");
 const formInputOverlay = document.querySelector("[form-input-overlay]");
 const formInputModalContent = document.querySelector("[form-input-modal-content]");
 const formIframe = document.getElementById("formInputFrame");
-const formInputModalFunc = function () {
-  formInputContainer.classList.toggle("active");
-  formInputOverlay.classList.toggle("active");
-}
-formInputCloseBtn.addEventListener("click", formInputModalFunc);
-formInputOverlay.addEventListener("click", formInputModalFunc);
+
+formInputCloseBtn.addEventListener("click", () => toogleFormInput(false));
+formInputOverlay.addEventListener("click", () => toogleFormInput(false));
 
 //#########################SERVICE-DETAIL###############################
 

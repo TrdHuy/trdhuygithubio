@@ -150,13 +150,23 @@ class ReplaceClassPlugin {
 
 const classMappingsCache = {};
 
-const jsEntry = glob
-  .sync('./src/assets/js/*.js')
-  .reduce((acc, entry) => {
-    const entryName = path.basename(entry, path.extname(entry));
-    acc[entryName] = path.resolve(__dirname, entry);
-    return acc;
-  }, {});
+const jsEntry = {
+  ...glob
+    .sync('./src/assets/js/*.js')
+    .reduce((acc, entry) => {
+      const entryName = path.basename(entry, path.extname(entry));
+      acc[entryName] = path.resolve(__dirname, entry);
+      return acc;
+    }, {}),
+  ...glob
+    .sync('./src/assets/si/*.si.js')
+    .reduce((acc, entry) => {
+      const entryName = path.basename(entry, path.extname(entry));
+      acc[entryName] = path.resolve(__dirname, entry);
+      return acc;
+    }, {}),
+};
+
 function generateHtmlPlugins() {
   const templateFiles = glob.sync('./src/**/*.html');
   return templateFiles.map((item) => {

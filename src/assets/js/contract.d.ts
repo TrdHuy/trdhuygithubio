@@ -17,6 +17,8 @@ declare global {
      interface Window {
           TRD_CONTRACT: TRD_CONTRACT;
           loadFormToIFrame(url: string, container: HTMLIFrameElement): void;
+          showTopWindowInputForm(url: string, submitCallback: (token: string) => void): void;
+          hideTopWindowInputForm(url: string): void;
      }
 }
 
