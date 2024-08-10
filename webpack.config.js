@@ -165,16 +165,18 @@ function generateHtmlPlugins() {
     const name = parts[parts.length - 1].split('.')[0];
 
     let relatedChunks;
-    if (name == 'index') {
-      relatedChunks = Object.keys(jsEntry).filter((chunkName) =>
-        chunkName.includes(name)
-      );
-    } else {
-      relatedChunks = Object.keys(jsEntry).filter((chunkName) =>
-        chunkName.includes(name) || chunkName.includes('common')
-      );
-    }
-
+    // if (name == 'index') {
+    //   relatedChunks = Object.keys(jsEntry).filter((chunkName) =>
+    //     chunkName.includes(name)
+    //   );
+    // } else {
+    //   relatedChunks = Object.keys(jsEntry).filter((chunkName) =>
+    //     chunkName.includes(name) || chunkName.includes('common')
+    //   );
+    // }
+    relatedChunks = Object.keys(jsEntry).filter((chunkName) =>
+      chunkName.includes(name) || chunkName.includes('common')
+    );
     relatedChunks.push('contract');
 
     return new HtmlWebpackPlugin({

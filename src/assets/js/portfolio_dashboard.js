@@ -77,21 +77,6 @@ const portfolioPageDetail = document.getElementById('portfolio-page-detai');
 const portfolioList = document.getElementById('portfolio-list');
 const portfolioIframeContainer = document.getElementById('portfolio-page-iframe-container');
 
-window.addEventListener('message', function (event) {
-     const data = event.data;
-     switch (data.event) {
-          case TRD_CONTRACT.EVENT.IFRAME_CONTENT_SIZE_CHANGED:
-               if (data.frameId) {
-                    if (event.data.height) {
-                         portfolioIframeContainer.style.height = event.data.height + 'px';
-                    }
-               }
-               break;
-          default:
-               console.log('Unknown event:', data.event);
-     }
-});
-
 portfolioCloseBtn.addEventListener('click', function () {
      portfolioOverviewArea.classList.add('active')
      portfolioPageDetail.classList.remove('active')

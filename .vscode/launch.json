@@ -60,6 +60,12 @@
                "type": "chrome",
                "request": "launch",
                "url": "http://localhost:5501/${relativeFile}",
+          },
+          {
+               "name": "Open current index.html file with Live Server",
+               "type": "chrome",
+               "request": "launch",
+               "url": "http://localhost:5501/src/index.html",
           }
      ]
 }

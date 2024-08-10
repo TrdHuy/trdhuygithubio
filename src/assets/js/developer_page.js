@@ -102,10 +102,4 @@ async function displayFiles(files, allFiles) {
      }
 
      document.getElementById('fileTable').style.display = 'table';
-
-     const height = document.documentElement.scrollHeight;
-     const width = document.documentElement.scrollWidth;
-     contract.sendMessageToParent(contract.EVENT.IFRAME_CONTENT_SIZE_CHANGED,
-          { frameId: window.frameId, height, width });
-
 }

@@ -63,60 +63,20 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 //######################################################################
 
-const iframeMap = new Map();
-function loadForm(url, container) {
-  const iframeId = container.id;
-  const newUrl = url + '?iframeId=' + iframeId + '&shouldNotifyWidth=1';
-  container.src = newUrl;
-}
-
-document.querySelectorAll('iframe').forEach(iframe => {
-  iframeMap.set(iframe.id, iframe);
-  iframe.onload = function () {
-    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-    if (iframe.documentContentResizeObserver) {
-      iframe.documentContentResizeObserver.disconnect();
-      iframe.documentContentResizeObserver.observe(iframeDocument.documentElement);
-    } else {
-      iframe.documentContentResizeObserver = new ResizeObserver(entries => {
-        for (let entry of entries) {
-          iframe.style.height = entry.target.scrollHeight + 'px';
-        }
-      });
-      iframe.documentContentResizeObserver.observe(iframeDocument.documentElement);
-    }
-  };
-
-});
-
 // form input variables
 window.addEventListener('message', function (event) {
   const data = event.data;
   switch (data.event) {
-    case TRD_CONTRACT.EVENT.IFRAME_CONTENT_SIZE_CHANGED:
-      // if (data.frameId) {
-      //   const iframe = iframeMap.get(data.frameId);
-      //   if (event.data.height) {
-      //     iframe.style.height = event.data.height + 'px';
-      //   }
-      //   if (event.data.width) {
-      //     iframe.style.width = event.data.width + 'px';
-      //   }
-      // }
-      break;
     case TRD_CONTRACT.EVENT.SHOW_FORM_INPUT:
       const url = data.url;
       if (url) {
-        loadForm(url, formIframe);
+        this.window.loadFormToIFrame(url, formIframe);
         formInputModalFunc();
       }
       break;
     case TRD_CONTRACT.EVENT.HIDE_FORM_INPUT:
-      const frameId = data.frameId;
-      if (frameId == formIframe.id) {
-        formInputContainer.classList.remove("active");
-        formInputOverlay.classList.remove("active");
-      }
+      formInputContainer.classList.remove("active");
+      formInputOverlay.classList.remove("active");
       break;
     default:
       console.log('Unknown event:', data.event);

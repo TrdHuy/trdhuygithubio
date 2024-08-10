@@ -4,15 +4,14 @@ window.addEventListener('localStorageChange', function (event) {
 });
 const TRD_CONTRACT = window.TRD_CONTRACT
 var btn = document.getElementById("submitToken");
+const folderPath = 'CoverageReport';
 
 btn.onclick = async function () {
      const cachedFiles = localStorage.getItem(TRD_CONTRACT.LOCAL_STORAGE_KEY.GITHUB_DATA_TREE);
      // showLoading();
 
      if (cachedFiles) {
-          const files = JSON.parse(cachedFiles);
-          const filteredFiles = files.filter(item => item.path.startsWith(folderPath) && item.type === 'blob' && item.path.endsWith('index.html'));
-          displayFiles(filteredFiles, files);
+          TRD_CONTRACT.sendMessageToParent(TRD_CONTRACT.EVENT.HIDE_FORM_INPUT, { frameId: window.frameId });
 
      } else {
           const token = document.getElementById('inputToken').value;
