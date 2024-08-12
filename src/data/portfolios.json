@@ -12,5 +12,19 @@
           "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
           "page_url": "portfolio_autoblocker.html",
           "page_category": "Android application"
+     },
+     {
+          "page_id": "page_portfolio_autoblocker3",
+          "page_name": "Auto blocker",
+          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
+          "page_url": "portfolio_autoblocker.html",
+          "page_category": "Android application"
+     },
+     {
+          "page_id": "page_portfolio_autoblocker4",
+          "page_name": "Auto blocker",
+          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
+          "page_url": "portfolio_autoblocker.html",
+          "page_category": "Android application"
      }
 ]
