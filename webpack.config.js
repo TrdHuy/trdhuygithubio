@@ -91,6 +91,7 @@ class RemoveLocalLinksAndScriptsPlugin {
 
           // Loại bỏ tất cả các thẻ <script> có src bắt đầu bằng './assets/js/'
           htmlContent = htmlContent.replace(/<script\b[^>]*src="\.\/assets\/js\/[^"]*"[^>]*><\/script>/gi, '');
+          htmlContent = htmlContent.replace(/<script\b[^>]*src="\.\/assets\/jscc\/[^"]*"[^>]*><\/script>/gi, '');
 
           // Loại bỏ tất cả các thẻ <link> có href bắt đầu bằng './assets/css/'
           htmlContent = htmlContent.replace(/<link\b[^>]*href="\.\/assets\/css\/[^"]*"[^>]*>/gi, '');
@@ -165,7 +166,15 @@ const jsEntry = {
       acc[entryName] = path.resolve(__dirname, entry);
       return acc;
     }, {}),
+  ...glob
+    .sync('./src/assets/jscc/*.jscc.js')
+    .reduce((acc, entry) => {
+      const entryName = path.basename(entry, path.extname(entry));
+      acc[entryName] = path.resolve(__dirname, entry);
+      return acc;
+    }, {}),
 };
+
 
 function generateHtmlPlugins() {
   const templateFiles = glob.sync('./src/**/*.html');
@@ -250,6 +259,11 @@ module.exports = (env, argv) => {
                     attribute: 'src',
                     type: 'src',
                   },
+                  {
+                    tag: 'loading-image',
+                    attribute: 'src',
+                    type: 'src',
+                  },
                   // Chặn việc xử lý các thẻ script và link với các đường dẫn cụ thể
                   {
                     tag: 'script',
@@ -258,6 +272,15 @@ module.exports = (env, argv) => {
                     filter: (tag, attribute, attributes) => {
                       const srcAttr = attributes.find(attr => attr.name === 'src');
                       return srcAttr ? !/\.\/assets\/js\//.test(srcAttr.value) : true;
+                    },
+                  },
+                  {
+                    tag: 'script',
+                    attribute: 'src',
+                    type: 'src',
+                    filter: (tag, attribute, attributes) => {
+                      const srcAttr = attributes.find(attr => attr.name === 'src');
+                      return srcAttr ? !/\.\/assets\/jscc\//.test(srcAttr.value) : true;
                     },
                   },
                   {
