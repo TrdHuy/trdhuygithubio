@@ -1,7 +1,10 @@
 class LoadingImage extends HTMLElement {
      constructor() {
           super();
-          this.host = this.attachShadow({ mode: 'closed' });
+          this.host = this.attachShadow({ mode: 'open' });
+          document.documentElement.style.setProperty('--spinner-container-width', '300px');
+          document.documentElement.style.setProperty('--spinner-color', '#fff');
+
           const shadowRoot = this.host;
           shadowRoot.host.style.overflow = 'clip';
           shadowRoot.host.style.display = 'flex';
@@ -15,14 +18,14 @@ class LoadingImage extends HTMLElement {
 
           // Tạo spinner
           this.spinerContainer = document.createElement('div');
-          this.spinerContainer.style.width = '300px';
+          this.spinerContainer.style.width = 'var(--spinner-container-width)';
           this.spinerContainer.style.top = '50%';
           this.spinerContainer.style.display = 'flex';
           this.spinerContainer.style.justifyContent = 'center';
           this.spinner = document.createElement('div');
           const spinner = this.spinner;
-          spinner.style.border = '4px solid rgba(0, 0, 0, 0.1)';
-          spinner.style.borderLeftColor = '#000';
+          spinner.style.border = '4px solid rgba(0, 0, 0, 0.2)';
+          spinner.style.borderLeftColor = 'var(--spinner-color)';
           spinner.style.borderRadius = '50%';
           spinner.style.width = '50px';
           spinner.style.height = '50px';

@@ -7,24 +7,10 @@
           "page_category": "Android application"
      },
      {
-          "page_id": "page_portfolio_autoblocker2",
-          "page_name": "Auto blocker",
-          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
-          "page_url": "portfolio_autoblocker.html",
-          "page_category": "Android application"
-     },
-     {
-          "page_id": "page_portfolio_autoblocker3",
-          "page_name": "Auto blocker",
-          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
-          "page_url": "portfolio_autoblocker.html",
-          "page_category": "Android application"
-     },
-     {
-          "page_id": "page_portfolio_autoblocker4",
-          "page_name": "Auto blocker",
-          "page_avatar": "./assets/images/portofilo/autoblocker/ab.jpg",
-          "page_url": "portfolio_autoblocker.html",
+          "page_id": "page_portfolio_honeyboard",
+          "page_name": "Honey Board",
+          "page_avatar": "./assets/images/portofilo/keyboard/kb_cover.jpg",
+          "page_url": "portfolio_keyboard.html",
           "page_category": "Android application"
      }
 ]
