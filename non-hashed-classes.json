@@ -2,6 +2,7 @@
      "classes": [
           "active",
           "disabled",
-          "visible"
+          "visible",
+          "hljs"
      ]
 }
