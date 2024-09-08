@@ -1,65 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convert WebP to JPG and Save</title>
+    <title>Code Block with Full-Height Tabs and Copy Button</title>
+
+
+    <!-- Highlight.js JS -->
+
+    <script src="assets/jscc/codeblockloader.jscc.js"></script>
+
+    <!-- Ionicons CSS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for tabs and copy button */
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            /* Stretch items to match panel height */
+            background-color: #444;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding: 0;
+            height: 40px;
+            /* Fixed height for the header */
+        }
+
+        /* Tab styles */
+        .tabs {
+            display: flex;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            /* Vertically center text */
+            padding: 0 15px;
+            background-color: #444;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            height: 100%;
+            /* Make tab height match the container */
+        }
+
+        .tab.active {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        /* Copy button styles */
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 15px;
+            padding: 0 15px;
+            height: 100%;
+            /* Make button height match the container */
+        }
+
+        .copy-btn:hover {
+            color: #007bff;
+        }
+
+        /* Code container */
+        .code-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            margin: 0px;
+            background-color: #1e1e1e;
+            border-radius: 0 0 5px 5px;
+            border: 3px solid #1e1e1e;
+            overflow-x: auto;
+            display: none;
+        }
+
+        pre.active {
+            display: block;
+        }
+
+        pre code {
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-    <input type="file" id="webpFileInput" accept="image/webp">
-    <img id="jpgImage" alt="Converted JPG will appear here">
-    <button id="saveButton" style="display: none;">Save JPG</button>
 
-    <script>
-        document.getElementById('webpFileInput').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file && file.type === 'image/webp') {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const webpDataUrl = e.target.result;
-                    convertWebPToJPG(webpDataUrl).then(jpgDataUrl => {
-                        const imgElement = document.getElementById('jpgImage');
-                        imgElement.src = jpgDataUrl;
-                        createDownloadLink(jpgDataUrl, 'converted.jpg');
-                    }).catch(error => {
-                        console.error('Chuyển đổi thất bại:', error);
-                    });
-                };
-                reader.readAsDataURL(file);
-            } else {
-                alert('Vui lòng chọn một tệp WebP.');
-            }
-        });
+    <h1>Code Block with Full-Height Tabs and Copy Button</h1>
 
-        function convertWebPToJPG(webpDataUrl) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
-                    resolve(canvas.toDataURL('image/jpeg'));
-                };
-                img.onerror = (error) => reject(error);
-                img.src = webpDataUrl;
-            });
-        }
+    <div class="code-container">
+        <!-- Header with tabs and copy button -->
+        <div class="code-header">
+            <div class="tabs">
+                <div class="tab active" onclick="showCode('kotlin', this)">Kotlin</div>
+                <div class="tab" onclick="showCode('java', this)">Java</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <ion-icon name="copy-outline"></ion-icon>
+            </button>
+        </div>
+        <pre id="kotlin"
+            class="active"><code src="data/codesample/pat/BindService.kt" class="language-kotlin"></code></pre>
+        <pre id="java"><code src="data/codesample/pat/IPATService.aidl" class="language-java"></code></pre>
+    </div>
+    <div class="code-container">
+        <!-- Header with tabs and copy button -->
+        <div class="code-header">
+            <div class="tabs">
+                <div class="tab active" onclick="showCode('kotlin', this)">Kotlin</div>
+                <div class="tab" onclick="showCode('java', this)">Java</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this)">
+                <ion-icon name="copy-outline"></ion-icon>
+            </button>
+        </div>
+        <pre id="kotlin"
+            class="active"><code src="data/codesample/pat/BindService.kt" class="language-kotlin"></code></pre>
+        <pre id="java"><code src="data/codesample/pat/IPATService.aidl" class="language-java"></code></pre>
+    </div>
 
-        function createDownloadLink(dataUrl, filename) {
-            const saveButton = document.getElementById('saveButton');
-            saveButton.style.display = 'inline-block';
-
-            saveButton.addEventListener('click', () => {
-                const a = document.createElement('a');
-                a.href = dataUrl;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            });
-        }
-    </script>
 </body>
+
 </html>

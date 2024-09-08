@@ -12,5 +12,12 @@
           "page_avatar": "./assets/images/portofilo/keyboard/kb_cover.jpg",
           "page_url": "portfolio_keyboard.html",
           "page_category": "Android application"
+     },
+     {
+          "page_id": "page_portfolio_privateaccesstoken",
+          "page_name": "Private Access Token",
+          "page_avatar": "./assets/images/portofilo/pat/pat_flow.png",
+          "page_url": "portfolio_privateaccesstoken.html",
+          "page_category": "Android application"
      }
 ]

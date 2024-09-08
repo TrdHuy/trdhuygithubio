@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const glob = require('glob');
 const fs = require('fs');
 const crypto = require('crypto');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 class ReplaceJsonPathsPlugin {
   constructor() {
@@ -177,7 +178,10 @@ const jsEntry = {
 
 
 function generateHtmlPlugins() {
-  const templateFiles = glob.sync('./src/**/*.html');
+  const templateFiles = glob.sync('./src/**/*.html').filter((item) => {
+    const fileName = path.basename(item);
+    return !fileName.includes('test__'); // Loại bỏ các file có chứa 'test__'
+  });
   return templateFiles.map((item) => {
     item = item.replace(/\\/g, '/');
     const parts = item.split('/');
@@ -237,6 +241,14 @@ module.exports = (env, argv) => {
     },
     module: {
       rules: [
+        // {
+        //   test: /\.(.*)$/, // Phù hợp với tất cả các tệp
+        //   type: 'asset/resource', // Đối xử với các tệp như tài nguyên
+        //   include: path.resolve(__dirname, 'src/data/codesample/pat'), // Chỉ xử lý thư mục data/codesample
+        //   generator: {
+        //     filename: '[path][name][ext]' // Lưu các tệp vào thư mục codesample trong dist
+        //   }
+        // },
         {
           test: /\.json$/,
           type: 'asset/resource',
@@ -357,6 +369,14 @@ module.exports = (env, argv) => {
     },
     plugins: [
       ...htmlPlugins,
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, 'src/data/codesample'),
+            to: path.resolve(__dirname, 'dist/data/codesample') // Sao chép các tệp vào thư mục output
+          }
+        ]
+      }),
       new MiniCssExtractPlugin({
         filename: isProduction ? '[contenthash].css' : '[name].css',
       }),

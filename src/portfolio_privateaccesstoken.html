@@ -1,0 +1,135 @@
+<head>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/portfolio_autoblocker.css">
+    <link rel="stylesheet" href="./assets/css/code_block.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script defer="defer" src="./assets/jscc/horimagecontainer.jscc.js"></script>
+    <script defer="defer" src="./assets/jscc/loadingimage.jscc.js"></script>
+    <script defer="defer" src="./assets/jscc/codeblockloader.jscc.js"></script>
+
+</head>
+
+<body class="portfolio-container" style="color: azure;">
+    <div class="overview overview-container">
+        <h1 class="item-title">Overview:</h1>
+        <p>The Private Access Token (PAT) project introduces a secure and streamlined method for browsers to
+            authenticate with websites using tokens, without the need for direct integration with the DVSAgent library.
+            This solution leverages a preloaded PAT service on devices, simplifying interactions between the browser and
+            the service for token-based authentication. The goal is to enhance security and streamline the process of
+            detecting and managing human vs. bot traffic while maintaining user privacy and seamless browsing
+            experiences.</p>
+        <div style="display: flex;justify-content: center;">
+            <img src="assets/images/portofilo/pat/pat_flow.png"
+                style="width: 75vw;margin-top: 30px;margin-bottom: 30px;">
+        </div>
+
+        <p>
+            When a browser visits a site and encounters the HTTP header
+            <code>"WWW-Authenticate: PrivateToken challenge"</code>, it begins the following authentication process:
+        </p>
+
+        <h2>Step 1: Receive Challenge from Server</h2>
+        <p>
+            When the user accesses a site using the Private Access Token (PAT) mechanism, the server sends back an
+            HTTP header <code>"WWW-Authenticate: PrivateToken challenge"</code>. This challenge requires the browser
+            to authenticate using a token to proceed. The challenge helps the server determine if the user is legitimate
+            (human) or a bot.
+        </p>
+
+        <h2>Step 2: Request Token from Issuer</h2>
+        <p>
+            After receiving the challenge, the browser requests a token from the preloaded PAT service on the device.
+            The token is issued by the security server (e.g., Cloudflare) based on the challenge provided by the origin
+            server.
+        </p>
+
+        <h2>Step 3: Communication Between Browser and PAT Service</h2>
+        <p>
+            The PAT service processes the browser’s request, interacts with the token issuer server, and generates a
+            token based on the challenge. The PAT service then returns the token to the browser.
+        </p>
+
+        <h2>Step 4: Send Request with Token</h2>
+        <p>
+            Once the browser receives the token, it sends a new HTTP request to the site, this time adding the token
+            to the <code>Authorization</code> header. The token will be in the format
+            <code>"PrivateToken token=&lt;token_value&gt;"</code>, and the server will verify it to determine
+            whether the user is legitimate.
+        </p>
+
+        <h2>Step 5: Manage PAT Service Status</h2>
+        <p>
+            If the user continues to navigate the same server, the browser can keep using the PAT service. However,
+            if the PAT feature is disabled or no longer needed, the service can be turned off.
+        </p>
+
+
+        <table style="margin-top: 30px;">
+            <tr>
+                <th>Purpose</th>
+                <td>Provide a secure, token-based authentication mechanism for browsers to communicate with websites
+                    using Private Access Tokens, without extra libraries.</td>
+            </tr>
+            <tr>
+                <th>Release</th>
+                <td>The PAT project will be released with Android version 15 on Samsung mobile devices.</td>
+            </tr>
+            <tr>
+                <th>Main Features</th>
+                <td>
+                    <ul>
+                        <li>Automatic token issuance and validation through Cloudflare.</li>
+                        <li>Seamless integration with the device's preloaded PAT service.</li>
+                        <li>Browser interception to handle site traffic and validate tokens.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Benefits</th>
+                <td>
+                    <ul>
+                        <li>Enhances security through token-based access.</li>
+                        <li>Simplifies browser-to-server communication without direct DVSAgent dependency.</li>
+                        <li>Protects user privacy while enabling human/bot detection.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>Goal</th>
+                <td>Develop an efficient, secure, and easy-to-integrate solution for web browsers to authenticate with
+                    sites via token-based mechanisms.</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- Code Block -->
+    <div class="codeb-container" style="margin: 50px 100px 0px 100px;" codeb-container>
+        <!-- Header with tabs and copy button -->
+        <div class="codeb-header">
+            <div class="codeb-tabs">
+                <div class="codeb-tab active" codeb-tab-lang="kotlin">Kotlin</div>
+                <div class="codeb-tab" codeb-tab-lang="java">Java</div>
+            </div>
+            <button class="codeb-copy-btn" codeb-copy-btn>
+                <ion-icon name="copy-outline"></ion-icon>
+            </button>
+        </div>
+
+        <!-- Kotlin Code -->
+        <pre id="kotlin"
+            class="active"><code class="language-kotlin" src="data/codesample/pat/BindService.kt"></code></pre>
+
+        <!-- Java Code -->
+        <pre id="java"><code class="language-java" src="data/codesample/pat/BindService.java"></code></pre>
+    </div>
+
+
+</body>
+<footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./assets/js/contract.js"></script>
+</footer>
