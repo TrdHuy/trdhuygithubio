@@ -39,8 +39,10 @@ function showCode(language, tabElement) {
 
 // Function to copy the code from the currently active block
 function copyCode(button) {
+    var container = button.closest('[codeb-container]');  // Get the closest code container
+
     // Find the active <code> element inside the container
-    var activeCodeBlock = document.querySelector('pre.active code');
+    var activeCodeBlock = container.querySelector('pre.active code');
     var textToCopy = activeCodeBlock.innerText;
 
     // Create a temporary textarea element to copy the text
@@ -127,6 +129,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             .catch(error => {
                 codeElement.textContent = "Error: " + error.message; // Display error if file not found
             });
+    });
+
+    var codeElementsWithoutSrc = document.querySelectorAll('code:not([src])');
+    codeElementsWithoutSrc.forEach(function(element) {
+        hljs.highlightElement(element);
     });
 });
 

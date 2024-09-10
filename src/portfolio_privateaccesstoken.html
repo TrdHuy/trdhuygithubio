@@ -26,44 +26,49 @@
         </div>
 
         <p>
-            When a browser visits a site and encounters the HTTP header
-            <code>"WWW-Authenticate: PrivateToken challenge"</code>, it begins the following authentication process:
+            When a browser visits a site and encounters the HTTP header "WWW-Authenticate: PrivateToken challenge", it begins the following authentication process:
         </p>
 
-        <h2>Step 1: Receive Challenge from Server</h2>
-        <p>
-            When the user accesses a site using the Private Access Token (PAT) mechanism, the server sends back an
-            HTTP header <code>"WWW-Authenticate: PrivateToken challenge"</code>. This challenge requires the browser
-            to authenticate using a token to proceed. The challenge helps the server determine if the user is legitimate
-            (human) or a bot.
-        </p>
+        <div style="margin-left: 10px; margin-right: 10px;margin-top: 10px;">
+            <h3>⚡️Step 1: Receive Challenge from Server</h3>
+            <p style="margin-left: 25px;">
+                When the user accesses a site using the Private Access Token (PAT) mechanism, the server sends back an
+                HTTP header "WWW-Authenticate: PrivateToken challenge". This challenge requires the browser
+                to authenticate using a token to proceed. The challenge helps the server determine if the user is
+                legitimate
+                (human) or a bot.
+            </p>
 
-        <h2>Step 2: Request Token from Issuer</h2>
-        <p>
-            After receiving the challenge, the browser requests a token from the preloaded PAT service on the device.
-            The token is issued by the security server (e.g., Cloudflare) based on the challenge provided by the origin
-            server.
-        </p>
+            <h3>⚡️Step 2: Request Token from Issuer</h3>
+            <p style="margin-left: 25px;">
+                After receiving the challenge, the browser requests a token from the preloaded PAT service on the
+                device.
+                The token is issued by the security server (e.g., Cloudflare) based on the challenge provided by the
+                origin
+                server.
+            </p>
 
-        <h2>Step 3: Communication Between Browser and PAT Service</h2>
-        <p>
-            The PAT service processes the browser’s request, interacts with the token issuer server, and generates a
-            token based on the challenge. The PAT service then returns the token to the browser.
-        </p>
+            <h3>⚡️Step 3: Communication Between Browser and PAT Service</h3>
+            <p style="margin-left: 25px;">
+                The PAT service processes the browser’s request, interacts with the token issuer server, and generates a
+                token based on the challenge. The PAT service then returns the token to the browser.
+            </p>
 
-        <h2>Step 4: Send Request with Token</h2>
-        <p>
-            Once the browser receives the token, it sends a new HTTP request to the site, this time adding the token
-            to the <code>Authorization</code> header. The token will be in the format
-            <code>"PrivateToken token=&lt;token_value&gt;"</code>, and the server will verify it to determine
-            whether the user is legitimate.
-        </p>
+            <h3>⚡️Step 4: Send Request with Token</h3>
+            <p style="margin-left: 25px;">
+                Once the browser receives the token, it sends a new HTTP request to the site, this time adding the token
+                to the Authorization header. The token will be in the format
+                "PrivateToken token=&lt;token_value&gt;", and the server will verify it to determine
+                whether the user is legitimate.
+            </p>
 
-        <h2>Step 5: Manage PAT Service Status</h2>
-        <p>
-            If the user continues to navigate the same server, the browser can keep using the PAT service. However,
-            if the PAT feature is disabled or no longer needed, the service can be turned off.
-        </p>
+            <h3>⚡️Step 5: Manage PAT Service Status</h3>
+            <p style="margin-left: 25px;">
+                If the user continues to navigate the same server, the browser can keep using the PAT service. However,
+                if the PAT feature is disabled or no longer needed, the service can be turned off.
+            </p>
+
+        </div>
 
 
         <table style="margin-top: 30px;">
@@ -106,26 +111,128 @@
 
 
     <!-- Code Block -->
-    <div class="codeb-container" style="margin: 50px 0px 0px 0px;" codeb-container>
-        <!-- Header with tabs and copy button -->
-        <div class="codeb-header">
-            <div class="codeb-tabs">
-                <div class="codeb-tab active" codeb-tab-lang="kotlin">Kotlin</div>
-                <div class="codeb-tab" codeb-tab-lang="java">Java</div>
+    <h1 class="item-title" style="margin-top: 50px;">Developer guide:</h1>
+
+    <div style="margin-left: 10px;margin-right: 10px;">
+        <h2 >⚡️Put PAT Service AIDL and bind PAT service at the first time</h2>
+        <div class="codeb-container" style="margin-top: 10px;" codeb-container>
+            <!-- Header with tabs and copy button -->
+            <div class="codeb-header">
+                <div class="codeb-tabs">
+                    <div class="codeb-tab active" codeb-tab-lang="kotlin">Kotlin</div>
+                    <div class="codeb-tab" codeb-tab-lang="java">Java</div>
+                </div>
+                <button class="codeb-copy-btn" codeb-copy-btn>
+                    <ion-icon name="copy-outline"></ion-icon>
+                </button>
             </div>
-            <button class="codeb-copy-btn" codeb-copy-btn>
-                <ion-icon name="copy-outline"></ion-icon>
-            </button>
+    
+            <!-- Kotlin Code -->
+            <pre id="kotlin"
+                class="active"><code class="language-kotlin" src="data/codesample/pat/BindService.kt"></code></pre>
+    
+            <!-- Java Code -->
+            <pre id="java"><code class="language-java" src="data/codesample/pat/BindService.java"></code></pre>
         </div>
 
-        <!-- Kotlin Code -->
-        <pre id="kotlin"
-            class="active"><code class="language-kotlin" src="data/codesample/pat/BindService.kt"></code></pre>
+        <h2 style="margin-top: 50px;">⚡️Declare permission in AndroidManifest.xml</h2>
+        <div class="codeb-container" style="margin-top: 10px;" codeb-container>
+            <!-- Header with tabs and copy button -->
+            <div class="codeb-header">
+                <div class="codeb-tabs">
+                    <div class="codeb-tab active" codeb-tab-lang="xml">XML</div>
+                </div>
+                <button class="codeb-copy-btn" codeb-copy-btn>
+                    <ion-icon name="copy-outline"></ion-icon>
+                </button>
+            </div>
+    
+            <pre id="xml"
+                class="active"><code class="language-xml">&lt;uses-permission android:name=&quot;com.samsung.android.privateaccesstokens.PAT_TOKEN_PERMISSION&quot; /&gt;</code></pre>
+        </div>
 
-        <!-- Java Code -->
-        <pre id="java"><code class="language-java" src="data/codesample/pat/BindService.java"></code></pre>
+        <h2 style="margin-top: 50px;">⚡️Browser needs to check site has header "WWW-Authenticate: PrivateToken challenge="</h2>
+        <div class="codeb-container" style="margin-top: 10px;" codeb-container>
+            <!-- Header with tabs and copy button -->
+            <div class="codeb-header">
+                <div class="codeb-tabs">
+                    <div class="codeb-tab active" codeb-tab-lang="kotlin">kotlin</div>
+                </div>
+                <button class="codeb-copy-btn" codeb-copy-btn>
+                    <ion-icon name="copy-outline"></ion-icon>
+                </button>
+            </div>
+    
+            <pre id="kotlin"
+                class="active"><code class="language-kotlin">if (isRunPOC) {
+    var result: TimedValue<String> = measureTimedValue {
+        handleIntercept(request)  // Intercept browser <-> site traffic and check origin site's response header
+    }
+}</code></pre>
+        </div>
+
+
+        <h2 style="margin-top: 50px;">⚡️Browser need to request PAT token from PAT Service using "WWW-Authenticate" header string. and checking if PAT service is running or not Token Challenge RFC</h2>
+        <div class="codeb-container" style="margin-top: 10px;" codeb-container>
+            <!-- Header with tabs and copy button -->
+            <div class="codeb-header">
+                <div class="codeb-tabs">
+                    <div class="codeb-tab active" codeb-tab-lang="kotlin">kotlin</div>
+                </div>
+                <button class="codeb-copy-btn" codeb-copy-btn>
+                    <ion-icon name="copy-outline"></ion-icon>
+                </button>
+            </div>
+    
+            <pre id="kotlin"
+                class="active"><code class="language-kotlin"> if(service?.getPatState() == false) {
+    service?.setPatState(true)
+}
+Log.w(TAG, "response www-auth headers: " + response?.header("www-authenticate"))
+val token = service?.requestToken("site url using pat if possible", header)
+Log.w(TAG, "get token from pat service. token: " + token)</code></pre>
+        </div>
+        
+        <p style="margin-top: 50px;">Below is PAT service's interface. requestToken API need 2 parameter.</p>
+        <p>originUrl: site url using PAT. it's used for calculating human/bot detection info precisely.</p>
+        <p>challengeList: "WWW-Authenticate" header value</p>
+        <div class="codeb-container" style="margin-top: 10px;" codeb-container></div>
+            <!-- Header with tabs and copy button -->
+            <div class="codeb-header">
+                <div class="codeb-tabs">
+                    <div class="codeb-tab active" codeb-tab-lang="aidl">AIDL</div>
+                </div>
+                <button class="codeb-copy-btn" codeb-copy-btn>
+                    <ion-icon name="copy-outline"></ion-icon>
+                </button>
+            </div>
+    
+            <pre id="AIDL"
+                class="active"><code class="language-java" src="data/codesample/pat/IPATService.aidl"></code></pre>
+          
+        </div>
+
+
+        <h2 style="margin-top: 50px;">⚡️The received token is base64Url format and used as the value of the "Authorization" header when making a new request to the site or CloudFlare's challenge WAF</h2>
+        <div class="codeb-container" style="margin-top: 10px;" codeb-container>
+            <!-- Header with tabs and copy button -->
+            <div class="codeb-header">
+                <div class="codeb-tabs">
+                    <div class="codeb-tab active" codeb-tab-lang="kotlin">kotlin</div>
+                </div>
+                <button class="codeb-copy-btn" codeb-copy-btn>
+                    <ion-icon name="copy-outline"></ion-icon>
+                </button>
+            </div>
+    
+            <pre id="kotlin"
+                class="active"><code class="language-kotlin">var originAuth = ("PrivateToken token=" + token)
+return originAuth</code></pre>
+        </div>
     </div>
+    
 
+    
 
 </body>
 <footer>
